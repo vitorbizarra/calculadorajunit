@@ -47,4 +47,39 @@ public class CalculadoraJUnitTest {
         Assert.assertEquals(0, soma);
     }
 
+    @Test
+    public void subtrairInteiroDeInteiro() {
+        int subtracao = this.calculadora.subtrair(2, 1);
+        Assert.assertEquals(1, subtracao);
+    }
+
+    @Test
+    public void subtrairZeroDeInteiro() {
+        int subtracao = this.calculadora.subtrair(1, 0);
+        Assert.assertEquals(1, subtracao);
+    }
+
+    @Test
+    public void subtrairInteiroDeZero() {
+        int subtracao = this.calculadora.subtrair(0, 1);
+        Assert.assertEquals(-1, subtracao);
+    }
+
+    @Test
+    public void subtrairZeroDeZero() {
+        int subtracao = this.calculadora.subtrair(0, 0);
+        Assert.assertEquals(0, subtracao);
+    }
+
+    @Test
+    public void subtrairNegativoDeInteiro() {
+        int subtracao = this.calculadora.subtrair(1, -1);
+        Assert.assertEquals(2, subtracao);
+    }
+
+    @Test
+    public void subtrairNegativoDeNegativo() {
+        int subtracao = this.calculadora.subtrair(-1, -1);
+        Assert.assertEquals(0, subtracao);
+    }
 }
