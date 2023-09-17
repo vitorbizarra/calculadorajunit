@@ -82,4 +82,34 @@ public class CalculadoraJUnitTest {
         int subtracao = this.calculadora.subtrair(-1, -1);
         Assert.assertEquals(0, subtracao);
     }
+
+    @Test
+    public void multiplicarInteiroPorInteiro() {
+        double subtracao = this.calculadora.multiplicar(2, 2);
+        Assert.assertEquals(4.0, subtracao, 1.0);
+    }
+
+    @Test
+    public void multiplicarInteiroPorNegativo() {
+        double subtracao = this.calculadora.multiplicar(2, -2);
+        Assert.assertEquals(-4.0, subtracao, 1.0);
+    }
+
+    @Test
+    public void multiplicarInteiroPorZero() {
+        double subtracao = this.calculadora.multiplicar(2, 0);
+        Assert.assertEquals(1.0, subtracao, 1.0);
+    }
+
+    @Test
+    public void multiplicarNegativoPorNegativo() {
+        double subtracao = this.calculadora.multiplicar(-2, -2);
+        Assert.assertEquals(4.0, subtracao, 1.0);
+    }
+
+    @Test
+    public void multiplicarZeroPorZero() {
+        double subtracao = this.calculadora.multiplicar(0, 0);
+        Assert.assertEquals(0.0, subtracao, 1.0);
+    }
 }
