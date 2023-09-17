@@ -1,15 +1,12 @@
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import com.calculadora.Calculadora;
 
 public class CalculadoraJUnitTest {
 
-    private Calculadora calculadora;
-
-    public CalculadoraJUnitTest() {
-        this.calculadora = new Calculadora();
-    }
+    private Calculadora calculadora = new Calculadora();
 
     @Test
     public void somarDoisNumerosPositivos() {
@@ -111,5 +108,30 @@ public class CalculadoraJUnitTest {
     public void multiplicarZeroPorZero() {
         double subtracao = this.calculadora.multiplicar(0, 0);
         Assert.assertEquals(0.0, subtracao, 1.0);
+    }
+
+    @Test
+    public void dividirInteiroPorInteiro() {
+        double subtracao = this.calculadora.dividir(4, 2);
+        Assert.assertEquals(2.0, subtracao, 1.0);
+    }
+
+    @Test
+    public void dividirInteiroPorNegativo() {
+        double subtracao = this.calculadora.dividir(2, -2);
+        Assert.assertEquals(-1.0, subtracao, 1.0);
+    }
+
+    @Test
+    @Ignore
+    public void dividirInteiroPorZero() throws Exception {
+        double subtracao = this.calculadora.dividir(2, 0);
+        Assert.assertThrows(null, null);
+    }
+
+    @Test
+    public void dividirNegativoPorNegativo() {
+        double subtracao = this.calculadora.dividir(-2, -2);
+        Assert.assertEquals(1.0, subtracao, 1.0);
     }
 }
