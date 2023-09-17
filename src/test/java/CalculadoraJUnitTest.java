@@ -123,10 +123,8 @@ public class CalculadoraJUnitTest {
     }
 
     @Test
-    @Ignore
     public void dividirInteiroPorZero() throws Exception {
-        double subtracao = this.calculadora.dividir(2, 0);
-        Assert.assertThrows(null, null);
+        Assert.assertThrows(ArithmeticException.class, () -> this.calculadora.dividir(2, 0));
     }
 
     @Test
