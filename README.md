@@ -2,7 +2,7 @@
 
 ## Descrição
 
-Classe de calculadora desenvolvida em Java..
+Classe de calculadora desenvolvida em Java.
 
 ## Funcionalidades
 
